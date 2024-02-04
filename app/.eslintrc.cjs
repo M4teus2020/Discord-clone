@@ -34,6 +34,6 @@ module.exports = {
         quotes: ['error', 'single'],
         indent: ['error', 4],
         'comma-spacing': ['error', { before: false, after: true }],
-        'linebreak-style': ['error', 'windows']
+        // 'linebreak-style': ['error', 'windows']
     }
 }
