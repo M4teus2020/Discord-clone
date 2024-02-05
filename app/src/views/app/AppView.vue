@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-full h-screen">
-        <!-- SIDEBAR -->
+        <!-- NAVBAR -->
         <div class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2">
             <!-- DM -->
             <div class="bg-[#313338] text-[#dbdee1] rounded-full w-12 h-12 transition hover:bg-[#5865f2] hover:text-[#ffffff] hover:rounded-2xl flex justify-center align-center">
@@ -42,12 +42,85 @@
             <!-- EXPLORE -->
 
         </div>
-        <!-- SIDEBAR -->
-        <!-- app -->
-        <div>
-            <div class="w-60 bg-[#2b2d31] h-full"></div>
+        <!-- NAVBAR -->
+
+        <!-- App -->
+        <div class="flex flex-grow">
+            <!-- SIDEBAR -->
+            <div class="w-60 h-full bg-[#2b2d31] flex flex-col shrink-0">
+                <!-- TOPBAR -->
+                <div class="h-12 elevation-low">
+
+                </div>
+                <!-- TOPBAR -->
+
+                <div class="grow">
+                </div>
+
+                <!-- PROFILE -->
+                <div class="h-[3.25rem] bg-[#232428] px-[6px] flex gap-2 align-center justify-between">
+                    <!-- USER -->
+                    <div class="hover-showtag pl-[2px] py-1 rounded-md hover:bg-[#3d3e45] flex flex-grow gap-2">
+                        <!-- AVATAR -->
+                        <div class="w-8 h-8 relative">
+                            <div class="rounded-full overflow-hidden">
+                                <img src="https://cdn.discordapp.com/avatars/208561912806506497/6cd59941edaa9eebb244407341d76731.webp?size=256" alt=" " aria-hidden="true">
+                            </div>
+                            <div class="status-icon w-[10px] h-[10px] bg-[#23a55a] rounded-full absolute bottom-0 right-0 "></div>
+                        </div>
+                        <!-- AVATAR -->
+
+                        <!-- NAME/TAG -->
+                        <div class="mt-[-2px]">
+                            <div class="text-white text-sm">Felini</div>
+                            <div class="text-[11px] h-4 overflow-hidden">
+                                <div class="relative top-0 transition-all status-tag">
+                                    <div class="status">Disponível</div>
+                                    <div class="tag">matfelini</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- NAME/TAG -->
+                    </div>
+                    <!-- USER -->
+
+                    <!-- ACTIONS -->
+                    <div class="flex">
+                        <button class="w-8 h-8 rounded-md hover:bg-[#3d3e45] flex align-center justify-center" aria-checked="false" aria-label="Silenciar" type="button">
+                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12 2a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V6a4 4 0 0 0-4-4Z" class=""></path>
+                                <path fill="currentColor" d="M6 10a1 1 0 0 0-2 0 8 8 0 0 0 7 7.94V20H9a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2h-2v-2.06A8 8 0 0 0 20 10a1 1 0 1 0-2 0 6 6 0 0 1-12 0Z" class=""></path>
+                            </svg>
+                        </button>
+
+                        <button class="w-8 h-8 rounded-md hover:bg-[#3d3e45] flex align-center justify-center" aria-checked="false" aria-label="Desativar áudio" type="button">
+                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M12 3a9 9 0 0 0-8.95 10h1.87a5 5 0 0 1 4.1 2.13l1.37 1.97a3.1 3.1 0 0 1-.17 3.78 2.85 2.85 0 0 1-3.55.74 11 11 0 1 1 10.66 0c-1.27.71-2.73.23-3.55-.74a3.1 3.1 0 0 1-.17-3.78l1.38-1.97a5 5 0 0 1 4.1-2.13h1.86A9 9 0 0 0 12 3Z" class=""></path>
+                            </svg>
+                        </button>
+
+                        <button class="w-8 h-8 rounded-md hover:bg-[#3d3e45] flex align-center justify-center" aria-label="Configurações de usuário" type="button">
+                            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd" d="M10.56 1.1c-.46.05-.7.53-.64.98.18 1.16-.19 2.2-.98 2.53-.8.33-1.79-.15-2.49-1.1-.27-.36-.78-.52-1.14-.24-.77.59-1.45 1.27-2.04 2.04-.28.36-.12.87.24 1.14.96.7 1.43 1.7 1.1 2.49-.33.8-1.37 1.16-2.53.98-.45-.07-.93.18-.99.64a11.1 11.1 0 0 0 0 2.88c.06.46.54.7.99.64 1.16-.18 2.2.19 2.53.98.33.8-.14 1.79-1.1 2.49-.36.27-.52.78-.24 1.14.59.77 1.27 1.45 2.04 2.04.36.28.87.12 1.14-.24.7-.95 1.7-1.43 2.49-1.1.8.33 1.16 1.37.98 2.53-.07.45.18.93.64.99a11.1 11.1 0 0 0 2.88 0c.46-.06.7-.54.64-.99-.18-1.16.19-2.2.98-2.53.8-.33 1.79.14 2.49 1.1.27.36.78.52 1.14.24.77-.59 1.45-1.27 2.04-2.04.28-.36.12-.87-.24-1.14-.96-.7-1.43-1.7-1.1-2.49.33-.8 1.37-1.16 2.53-.98.45.07.93-.18.99-.64a11.1 11.1 0 0 0 0-2.88c-.06-.46-.54-.7-.99-.64-1.16.18-2.2-.19-2.53-.98-.33-.8.14-1.79 1.1-2.49.36-.27.52-.78.24-1.14a11.07 11.07 0 0 0-2.04-2.04c-.36-.28-.87-.12-1.14.24-.7.96-1.7 1.43-2.49 1.1-.8-.33-1.16-1.37-.98-2.53.07-.45-.18-.93-.64-.99a11.1 11.1 0 0 0-2.88 0ZM16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" clip-rule="evenodd" class=""></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- ACTIONS -->
+                </div>
+                <!-- PROFILE -->
+            </div>
+            <!-- SIDEBAR -->
+
+            <!-- CHAT -->
+            <div class="w-full h-full">
+                <!-- TOPBAR -->
+                <div class="h-12 elevation-low">
+                </div>
+                <!-- TOPBAR -->
+            </div>
+            <!-- CHAT -->
         </div>
-        <!-- app -->
+        <!-- App -->
     </div>
 </template>
 
@@ -60,4 +133,17 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.elevation-low {
+    box-shadow: 0 1px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.2), 
+                0 1.5px 0 hsl(0 calc(1 * 0%) 0.8% / 0.05), 
+                0 2px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.05);
+}
+.status-icon {
+    box-shadow: 0 0 0px 3px #232428;
+}
+.hover-showtag:hover {
+    .status-tag {
+        top: -16px;
+    }
+}
 </style>
