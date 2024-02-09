@@ -1,12 +1,10 @@
-import  FriendsIcon from './FriendsIcon.vue'
-// import  Icon2 from './Icon2';
-import  DefaultIcon from './FriendsIcon.vue'
-
-
-const icons: { [key: string]: object } = {
-    FriendsIcon,
-    // Add other icons as needed
-    DefaultIcon,
-}
-  
-export default icons
+export { default as CogIcon } from './CogIcon.vue'
+export { default as CompassIcon } from './CompassIcon.vue'
+export { default as DiscordIcon } from './DiscordIcon.vue'
+export { default as FriendsIcon } from './FriendsIcon.vue'
+export { default as HeadPhoneIcon } from './HeadPhoneIcon.vue'
+export { default as MessageRequestsIcon } from './MessageRequestsIcon.vue'
+export { default as MicIcon } from './MicIcon.vue'
+export { default as NitroIcon } from './NitroIcon.vue'
+export { default as PlusIcon } from './PlusIcon.vue'
+export { default as StoreIcon } from './StoreIcon.vue'
