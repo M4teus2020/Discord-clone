@@ -1,24 +1,13 @@
 <template>
-    <div
-        class="h-[3.25rem] bg-[#232428] px-[6px] flex gap-2 align-center justify-between"
-    >
+    <div class="h-[3.25rem] bg-[#232428] px-[6px] flex gap-2 align-center justify-between">
         <!-- USER -->
-        <div
-            class="hover-showtag pl-[2px] py-1 rounded-md hover:bg-[#3d3e45] flex flex-grow gap-2"
-        >
+        <div class="hover-showtag pl-[2px] py-1 rounded-md hover:bg-[#3d3e45] flex flex-grow gap-2">
             <!-- AVATAR -->
-            <div class="w-8 h-8 relative">
-                <div class="rounded-full overflow-hidden">
-                    <img
-                        src="https://cdn.discordapp.com/avatars/208561912806506497/6cd59941edaa9eebb244407341d76731.webp?size=256"
-                        alt=" "
-                        aria-hidden="true"
-                    />
-                </div>
-                <div
-                    class="status-icon w-[10px] h-[10px] bg-[#23a55a] rounded-full absolute bottom-0 right-0"
-                ></div>
-            </div>
+            <AvatarComponent
+                class="w-8 h-8"
+                avatar-url="https://cdn.discordapp.com/avatars/208561912806506497/6cd59941edaa9eebb244407341d76731.webp?size=256"
+                status="idle"
+            />
             <!-- AVATAR -->
 
             <!-- NAME/TAG -->
@@ -37,15 +26,9 @@
 
         <!-- ACTIONS -->
         <div class="flex">
-            <BtnActionComponent 
-                icon="Mic"    
-            />
-            <BtnActionComponent 
-                icon="HeadPhone"    
-            />
-            <BtnActionComponent 
-                icon="Cog"    
-            />
+            <BtnActionComponent icon="Mic" />
+            <BtnActionComponent icon="HeadPhone" />
+            <BtnActionComponent icon="Cog" />
         </div>
         <!-- ACTIONS -->
     </div>
@@ -53,20 +36,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { BtnActionComponent } from '@/components'
+import { AvatarComponent, BtnActionComponent } from '@/components'
 
 export default defineComponent({
     name: 'BottomBarComponent',
     components: {
         BtnActionComponent,
+        AvatarComponent
     }
 })
 </script>
 
 <style lang="scss" scoped>
-.status-icon {
-    box-shadow: 0 0 0px 3px #232428;
-}
 .hover-showtag:hover {
     .status-tag {
         top: -16px;
