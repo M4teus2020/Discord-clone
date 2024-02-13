@@ -47,7 +47,12 @@
                             <a href="" class="text-[#00a8fc]">Esqueceu sua senha?</a>
                         </p>
 
-                        <v-btn class="w-full py-0.5 mb-2 mt-5" color="#5865f2" height="44px">
+                        <v-btn
+                            class="w-full py-0.5 mb-2 mt-5"
+                            color="#5865f2"
+                            height="44px"
+                            @click="submitLogin"
+                        >
                             <span class="capitalize text-base tracking-normal"> Entrar </span>
                         </v-btn>
 
@@ -94,8 +99,23 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { userAppStore } from '@/stores/User'
 
 export default defineComponent({
-    name: 'LoginView'
+    name: 'LoginView',
+    setup() {
+        const dataUserAppStore = userAppStore()
+        return { dataUserAppStore }
+    },
+    methods: {
+        async submitLogin(): Promise<void> {
+            const response = await this.dataUserAppStore.login()
+            const token = this.dataUserAppStore.token
+
+            if (response && token !== null) {
+                this.$router.push({ path: '/' })
+            }
+        }
+    }
 })
 </script>

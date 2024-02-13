@@ -3,25 +3,21 @@
         <NavbarComponent />
 
         <!-- App -->
-        <div class="flex flex-grow">
-            <SideBarComponent />
-
-            <ChatComponent />
-        </div>
+        <RouterView />
         <!-- App -->
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { ChatComponent, SideBarComponent, NavbarComponent } from './components'
+import { RouterView } from 'vue-router'
+import { NavbarComponent } from './components'
 
 export default defineComponent({
     name: 'AppView',
     components: {
-        ChatComponent,
+        RouterView,
         NavbarComponent,
-        SideBarComponent,
     }
 })
 </script>

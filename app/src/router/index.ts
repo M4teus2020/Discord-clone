@@ -9,9 +9,24 @@ const router = createRouter({
             component: () => import('../views/login/LoginView.vue')
         },
         {
-            path: '/app',
+            path: '/',
             name: 'app',
-            component: () => import('../views/app/AppView.vue')
+            component: () => import('../views/app/AppView.vue'),
+            meta: {
+                requireLogin: true
+            },
+            children: [
+                {
+                    path: '',
+                    name: 'private-channel',
+                    component: () => import('../views/private/PrivateView.vue'),
+                },
+                {
+                    path: 'server/:id',
+                    component: () => import('../views/private/PrivateView.vue'),
+                },
+                // { path: 'users/:id', component: AdminUserDetails },
+            ], 
         }
     ]
 })

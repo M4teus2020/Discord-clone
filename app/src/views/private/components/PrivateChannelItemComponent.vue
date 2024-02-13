@@ -11,9 +11,9 @@
                 class="w-8 h-8"
             />
         </div>
-        <span class="whitespace-nowrap overflow-hidden overflow-ellipsis">{{
-            data?.text ?? data?.username
-        }}</span>
+        <span class="whitespace-nowrap overflow-hidden overflow-ellipsis">
+            {{ data?.text ?? data?.username }}
+        </span>
     </li>
 </template>
 
@@ -34,7 +34,7 @@ export default defineComponent({
     },
     computed: {
         iconComponent() {
-            return defineAsyncComponent(() => import(`./icons/${this.data.icon}Icon.vue`))
+            return defineAsyncComponent(() => import(`../../../components/icons/${this.data.icon}Icon.vue`))
         }
     }
 })

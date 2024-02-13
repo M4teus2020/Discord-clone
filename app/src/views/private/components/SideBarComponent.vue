@@ -30,8 +30,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { PrivateChannelItemComponent } from '@/components'
-import { BottomBarComponent, TopBarComponent } from './index'
+import { BottomBarComponent, PrivateChannelItemComponent, TopBarComponent } from './index'
 import { PlusIcon } from '@/components/icons'
 
 export default defineComponent({
