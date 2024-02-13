@@ -8,7 +8,9 @@
                 <PrivateChannelItemComponent
                     v-for="menu in menuChannels"
                     :key="menu.id"
-                    :data="menu"
+                    :text="menu.text"
+                    :icon="menu.icon"
+                    :path="menu.path"
                 />
 
                 <h2
@@ -20,7 +22,13 @@
                     </div>
                 </h2>
 
-                <PrivateChannelItemComponent v-for="dm in dmChannels" :key="dm.id" :data="dm" />
+                <PrivateChannelItemComponent
+                    v-for="dm in dmChannels"
+                    :key="dm.id"
+                    :text="dm.username"
+                    :user="dm"
+                    :path="`/@me/${dm.id}`"
+                />
             </ul>
         </div>
         <!-- PRIVATE CHANNELS -->
@@ -47,22 +55,26 @@ export default defineComponent({
                 {
                     id: 1,
                     icon: 'Friends',
-                    text: 'Amigos'
+                    text: 'Amigos',
+                    path: '/@me'
                 },
                 {
                     id: 2,
                     icon: 'Nitro',
-                    text: 'Nitro'
+                    text: 'Nitro',
+                    path: '/nitro'
                 },
                 {
                     id: 3,
                     icon: 'MessageRequests',
-                    text: 'Solicitações de mensagens'
+                    text: 'Solicitações de mensagens',
+                    path: '/message-requests'
                 },
                 {
                     id: 4,
                     icon: 'Store',
-                    text: 'Loja'
+                    text: 'Loja',
+                    path: '/store'
                 }
             ],
             dmChannels: [

@@ -20,6 +20,30 @@ const router = createRouter({
                     path: '/@me',
                     name: 'private-channel',
                     component: () => import('../views/private/PrivateView.vue'),
+                    children: [
+                        {
+                            path: '',
+                            name: 'friends',
+                            component: () => import('../views/friends/FriendsView.vue'),
+                        },
+                        {
+                            path: '/@me/:channelId',
+                            component: () => import('../views/friends/FriendsView.vue'),
+                        },
+                        {
+                            path: '/nitro',
+                            component: () => import('../views/friends/FriendsView.vue'),
+                        },
+                        {
+                            path: '/store',
+                            component: () => import('../views/friends/FriendsView.vue'),
+                        },
+                        {
+                            path: '/message-requests',
+                            component: () => import('../views/friends/FriendsView.vue'),
+                        },
+
+                    ], 
                 },
                 {
                     path: '/channel/:channel',

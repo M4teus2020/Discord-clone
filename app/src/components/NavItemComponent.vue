@@ -76,7 +76,8 @@ export default defineComponent({
             return defineAsyncComponent(() => import(`./icons/${this.icon}Icon.vue`))
         },
         activeClass() {
-            return this.iconClassActive && this.$route.path === this.path
+            return this.iconClassActive &&
+                this.$route.matched.some(({ path }) => path === this.path)
                 ? this.iconClassActive
                 : ''
         }

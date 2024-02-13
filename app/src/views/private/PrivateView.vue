@@ -2,26 +2,22 @@
     <div class="flex flex-grow">
         <SideBarComponent />
 
-        <div class="w-full h-full">
-            <!-- TOPBAR -->
-            <div class="h-12 elevation-low"></div>
-            <!-- TOPBAR -->
-
-        </div>
+        <RouterView class="w-full h-full" />
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { RouterView } from 'vue-router'
 import { SideBarComponent } from './components'
 
 export default defineComponent({
     name: 'AppView',
     components: {
         SideBarComponent,
+        RouterView
     }
 })
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
