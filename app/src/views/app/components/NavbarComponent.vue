@@ -1,16 +1,17 @@
 <template>
     <div class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2">
         <!-- DM -->
-        <NavItemComponent 
+        <NavItemComponent
+            path="/@me"
             icon-class="bg-[#313338] text-[#dbdee1] hover:bg-[#5865f2] hover:text-[#ffffff]"
+            icon-class-active="bg-[#5865f2] text-[#ffffff]"
             icon="Discord"
-            pill-class="!left-[-0.75rem]"
         />
 
         <v-divider :thickness="2" class="w-8"></v-divider>
 
         <!-- SERVERS -->
-        <NavItemComponent>
+        <NavItemComponent path="/channel/1">
             <img
                 src="https://cdn.discordapp.com/icons/766449757706125392/fdd1c66b1547e0ad7036080d5e1cebbe.webp?size=96"
                 alt=" "
@@ -19,10 +20,7 @@
                 aria-hidden="true"
             />
         </NavItemComponent>
-        <NavItemComponent
-            :notification="true"
-            :notification-count="1"
-        >
+        <NavItemComponent path="/channel/2" :notification="true" :notification-count="1">
             <img
                 src="https://cdn.discordapp.com/icons/1078660903450464286/3dbf2e99be66e0c2655492c499b6fabd.webp?size=96"
                 alt=" "
@@ -34,16 +32,18 @@
         <!-- SERVERS -->
 
         <!-- ADD SERVER -->
-        <NavItemComponent 
+        <NavItemComponent
             icon-class="bg-[#313338] text-[#23a559] hover:bg-[#23a559] hover:text-[#ffffff]"
             icon="Plus"
             :pill="false"
         />
 
         <!-- EXPLORE -->
-        <NavItemComponent 
+        <NavItemComponent
+            path="/explore"
             icon-class="bg-[#313338] text-[#23a559] hover:bg-[#23a559] hover:text-[#ffffff]"
-            icon="Compass" 
+            icon-class-active="bg-[#23a559] text-[#ffffff]"
+            icon="Compass"
         />
     </div>
 </template>
@@ -55,7 +55,7 @@ import { NavItemComponent } from '@/components'
 export default defineComponent({
     name: 'NavbarComponent',
     components: {
-        NavItemComponent,
+        NavItemComponent
     }
 })
 </script>

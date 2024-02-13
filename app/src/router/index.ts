@@ -17,12 +17,16 @@ const router = createRouter({
             },
             children: [
                 {
-                    path: '',
+                    path: '/@me',
                     name: 'private-channel',
                     component: () => import('../views/private/PrivateView.vue'),
                 },
                 {
-                    path: 'server/:id',
+                    path: '/channel/:channel',
+                    component: () => import('../views/private/PrivateView.vue'),
+                },
+                {
+                    path: '/explore',
                     component: () => import('../views/private/PrivateView.vue'),
                 },
                 // { path: 'users/:id', component: AdminUserDetails },
