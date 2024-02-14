@@ -3,7 +3,7 @@
         <component
             :is="path !== false ? 'RouterLink' : 'div'"
             :to="path"
-            :class="`px-2 py-1.5 w-full rounded hover:bg-[#35373c] hover:text-[#dbdee1] flex align-center gap-3 ${isActive ? 'bg-[#3b3d44] text-white' : ''}`"
+            :class="`px-2 py-1.5 w-full rounded hover:bg-[#35373c] hover:text-[#dbdee1] flex align-center gap-3 ${isActive ? 'bg-[#3f4147] text-white' : ''}`"
         >
             <div class="flex justify-center align-center w-8 h-8 shrink-0">
                 <component v-if="icon" :is="iconComponent" class="w-6 h-6" />

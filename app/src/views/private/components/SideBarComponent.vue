@@ -3,7 +3,7 @@
         <TopBarComponent />
 
         <!-- PRIVATE CHANNELS -->
-        <div class="grow p-2">
+        <div class="grow p-2 overflow-auto">
             <ul>
                 <PrivateChannelItemComponent
                     v-for="menu in menuChannels"
