@@ -46,19 +46,76 @@
             </div>
         </div>
         <!-- TOPBAR -->
+        <div class="content w-full flex">
+            <div class="flex-grow flex flex-col">
+                <div class="item-container">
+                    <div class="flex bg-[#1e1f22] p-px rounded">
+                        <input class="px-2 h-8 flex-grow outline-none" placeholder="Buscar" />
+                        <div class="w-8 h-8 flex justify-center align-center">
+                            <MagnifyingGlassIcon class="h-5 w-5" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <h2 class="uppercase text-xs">Todos os amigos</h2>
+                </div>
+
+                <div class="mt-2 pb-2 overflow-auto">
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                    <FriendListItemComponent />
+                </div>
+            </div>
+
+            <div class="w-[360px] h-full border-l border-[#3f4147]"></div>
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-import { BoxIcon, FriendsIcon, HelpIcon, MessagePlusIcon } from '@/components/icons'
+import {
+    BoxIcon,
+    FriendsIcon,
+    HelpIcon,
+    MagnifyingGlassIcon,
+    MessagePlusIcon
+} from '@/components/icons'
+import { FriendListItemComponent } from './components'
 
 export default {
     name: 'FriendsView',
     components: {
-        FriendsIcon,
         BoxIcon,
+        FriendsIcon,
+        FriendListItemComponent,
         HelpIcon,
+        MagnifyingGlassIcon,
         MessagePlusIcon
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.item-container {
+    padding: 16px 20px 8px 30px;
+}
+.content {
+    height: calc(100vh - 3rem);
+}
+</style>
