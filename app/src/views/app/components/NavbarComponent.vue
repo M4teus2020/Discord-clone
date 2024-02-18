@@ -1,5 +1,7 @@
 <template>
-    <div class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2 overflow-auto">
+    <div
+        class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2 overflow-auto scroll-none"
+    >
         <!-- DM -->
         <NavItemComponent
             path="/@me"

@@ -61,7 +61,7 @@
                     <h2 class="uppercase text-xs">Todos os amigos</h2>
                 </div>
 
-                <div class="mt-2 pb-2 overflow-auto">
+                <div class="mt-2 pb-2 overflow-auto black-scroll">
                     <FriendListItemComponent />
                     <FriendListItemComponent />
                     <FriendListItemComponent />
@@ -83,7 +83,9 @@
                 </div>
             </div>
 
-            <div class="w-[360px] h-full border-l border-[#3f4147]"></div>
+            <!-- <div class="w-[360px] h-full border-l border-[#3f4147] p-4">
+                <h2 class="mt-2 mb-4 text-xl text-[#f2f3f5]">Ativo agora</h2>
+            </div> -->
         </div>
     </div>
 </template>

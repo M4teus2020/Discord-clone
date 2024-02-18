@@ -1,9 +1,9 @@
 <template>
     <div class="w-60 h-full bg-[#2b2d31] flex flex-col shrink-0">
-        <TopBarComponent />
+        <TopBarComponent class="shrink-0" />
 
         <!-- PRIVATE CHANNELS -->
-        <div class="grow p-2 overflow-auto">
+        <div class="grow p-2 overflow-y-scroll black-scroll">
             <ul>
                 <PrivateChannelItemComponent
                     v-for="menu in menuChannels"
@@ -33,7 +33,7 @@
         </div>
         <!-- PRIVATE CHANNELS -->
 
-        <BottomBarComponent />
+        <BottomBarComponent class="shrink-0" />
     </div>
 </template>
 <script lang="ts">
@@ -111,3 +111,15 @@ export default defineComponent({
     }
 })
 </script>
+
+<style lang="scss" scoped>
+.black-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+
+    padding-right: 0px;
+    &:hover {
+        scrollbar-color: #1a1b1e #2b2d31 !important;
+    }
+}
+</style>

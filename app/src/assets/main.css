@@ -16,5 +16,12 @@ img {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
+}
+
+.black-scroll {
+    scrollbar-color: #1a1b1e #2b2d31;
+}
+
+.scroll-none {
+    scrollbar-width: none;
 }

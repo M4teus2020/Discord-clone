@@ -1,6 +1,6 @@
 <template>
     <div
-        class="h-[62px] ml-[30px] mr-5 hover:!ml-5 hover:!mr-2.5 hover:px-2.5 hover:rounded-lg border-t-[0.8px] border-[#3f4147] hover:bg-[#393c41] flex align-center justify-between"
+        class="friend-item h-[62px] ml-[30px] mr-5 hover:!ml-5 hover:!mr-2.5 hover:px-2.5 hover:rounded-lg border-t-[0.8px] border-[#3f4147] hover:bg-[#393c41] flex align-center justify-between"
     >
         <div class="h-10 flex align-center">
             <AvatarComponent
@@ -18,12 +18,12 @@
         </div>
         <div class="flex gap-2">
             <div
-                class="rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center"
+                class="button rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center cursor-pointer"
             >
                 <MessageIcon class="w-5 h-5" />
             </div>
             <div
-                class="rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center"
+                class="button rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center cursor-pointer"
             >
                 <DotsIcon class="w-5 h-5" />
             </div>
@@ -44,3 +44,15 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.friend-item {
+    &:hover .button {
+        background-color: #1e1f22;
+
+        &:hover {
+            color: #dadde0;
+        }
+    }
+}
+</style>
