@@ -1,5 +1,8 @@
 <template>
-    <li :class="`nav-item relative ${isActive ? 'active' : ''}`" @click="$router.push(path)">
+    <li
+        :class="`nav-item relative ${isActive ? 'active' : ''}`"
+        @click="typeof path == 'string' ? $router.push(path) : ''"
+    >
         <div v-if="pill" class="pill absolute flex align-center h-full left-[-0.75rem]">
             <span
                 :class="`transition-all block rounded-r-full bg-white ${notification ? 'w-1 h-2' : 'w-0 h-0'}`"

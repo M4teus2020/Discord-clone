@@ -1,23 +1,20 @@
 <template>
-    <li class="mb-0.5">
-        <component
-            :is="path !== false ? 'RouterLink' : 'div'"
-            :to="path"
-            :class="`px-2 py-1.5 w-full rounded hover:bg-[#35373c] hover:text-[#dbdee1] flex align-center gap-3 ${isActive ? 'bg-[#3f4147] text-white' : ''}`"
-        >
-            <div class="flex justify-center align-center w-8 h-8 shrink-0">
-                <component v-if="icon" :is="iconComponent" class="w-6 h-6" />
-                <AvatarComponent
-                    v-if="typeof user == 'object'"
-                    :avatar-url="user.avatarUrl"
-                    :status="user.status"
-                    class="w-8 h-8"
-                />
-            </div>
-            <span class="whitespace-nowrap overflow-hidden overflow-ellipsis">
-                {{ text }}
-            </span>
-        </component>
+    <li
+        :class="`mb-0.5 px-2 py-1.5 w-full rounded hover:bg-[#35373c] hover:text-[#dbdee1] flex align-center gap-3 ${isActive ? 'bg-[#3f4147] text-white' : ''}`"
+        @click="$router.push(path)"
+    >
+        <div class="flex justify-center align-center w-8 h-8 shrink-0">
+            <component v-if="icon" :is="iconComponent" class="w-6 h-6" />
+            <AvatarComponent
+                v-if="typeof user == 'object'"
+                :avatar-url="user.avatarUrl"
+                :status="user.status"
+                class="w-8 h-8"
+            />
+        </div>
+        <span class="whitespace-nowrap overflow-hidden overflow-ellipsis">
+            {{ text }}
+        </span>
     </li>
 </template>
 
@@ -49,9 +46,8 @@ export default defineComponent({
             default: false
         },
         path: {
-            type: [String, Boolean],
-            required: false,
-            default: false
+            type: String,
+            required: true
         }
     },
     computed: {
