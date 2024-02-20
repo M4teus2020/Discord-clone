@@ -1,5 +1,5 @@
 <template>
-    <div
+    <ul
         class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2 overflow-auto scroll-none"
     >
         <!-- DM -->
@@ -47,7 +47,7 @@
             icon-class-active="bg-[#23a559] text-[#ffffff]"
             icon="Compass"
         />
-    </div>
+    </ul>
 </template>
 
 <script lang="ts">

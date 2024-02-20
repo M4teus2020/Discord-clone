@@ -9,7 +9,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
     name: 'App',
     components: {
-        RouterView,
+        RouterView
     },
     methods: {
         async verifyRoute(): Promise<void> {

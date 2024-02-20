@@ -1,20 +1,17 @@
 <template>
-    <component
-        :is="path !== false ? 'RouterLink' : 'div'"
-        :to="path"
-        class="nav-item relative"
-        active-class="active"
-    >
+    <li :class="`nav-item relative ${isActive ? 'active' : ''}`" @click="$router.push(path)">
         <div v-if="pill" class="pill absolute flex align-center h-full left-[-0.75rem]">
             <span
                 :class="`transition-all block rounded-r-full bg-white ${notification ? 'w-1 h-2' : 'w-0 h-0'}`"
             ></span>
         </div>
+
         <div
             :class="`icon-item w-12 h-12 rounded-full transition-all flex justify-center align-center overflow-hidden ${iconClass} ${activeClass}`"
         >
             <component v-if="icon" :is="iconComponent" />
             <slot v-else></slot>
+
             <span
                 v-if="notificationCount > 0"
                 class="count-tag text-white bg-[#f23f42] text-xs text-center px-1.5 min-w-4 rounded-lg absolute bottom-0 right-0"
@@ -22,18 +19,14 @@
                 {{ notificationCount }}
             </span>
         </div>
-    </component>
+    </li>
 </template>
 
 <script lang="ts">
 import { defineAsyncComponent, defineComponent } from 'vue'
-import { RouterLink } from 'vue-router'
 
 export default defineComponent({
     name: 'NavItemComponent',
-    components: {
-        RouterLink
-    },
     props: {
         path: {
             type: [String, Boolean],
@@ -75,11 +68,14 @@ export default defineComponent({
         iconComponent() {
             return defineAsyncComponent(() => import(`./icons/${this.icon}Icon.vue`))
         },
+        isActive() {
+            return (
+                this.$route.matched.some(({ path }) => path === this.path) ||
+                this.$route.fullPath === this.path
+            )
+        },
         activeClass() {
-            return this.iconClassActive &&
-                this.$route.matched.some(({ path }) => path === this.path)
-                ? this.iconClassActive
-                : ''
+            return this.iconClassActive && this.isActive ? this.iconClassActive : ''
         }
     }
 })
