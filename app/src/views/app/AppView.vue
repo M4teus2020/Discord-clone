@@ -1,6 +1,6 @@
 <template>
-    <div class="flex w-full h-screen">
-        <NavbarComponent />
+    <div class="flex w-full h-screen overflow-hidden">
+        <NavbarComponent class="shrink-0" />
 
         <!-- App -->
         <RouterView />
@@ -17,10 +17,9 @@ export default defineComponent({
     name: 'AppView',
     components: {
         RouterView,
-        NavbarComponent,
+        NavbarComponent
     }
 })
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

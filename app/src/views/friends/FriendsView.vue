@@ -2,41 +2,43 @@
     <div>
         <!-- TOPBAR -->
         <div class="elevation-low h-12 py-2 px-4 flex align-center">
-            <div class="flex align-center h-full w-full gap-2 text-[#80848e]">
-                <FriendsIcon class="w-6 h-full" />
-                <h1 class="text-[#f2f3f5]">Amigos</h1>
+            <div
+                class="flex align-center flex-grow h-full gap-2 text-[#80848e] overflow-auto scroll-none"
+            >
+                <FriendsIcon class="w-6 h-full shrink-0" />
+                <h1 class="text-[#f2f3f5] shrink-0">Amigos</h1>
 
-                <v-divider vertical :thickness="2" class="!h-6 my-auto px-1"></v-divider>
+                <v-divider vertical :thickness="2" class="!h-6 my-auto px-1 shrink-0"></v-divider>
 
-                <div class="px-2 flex gap-4">
+                <div class="px-2 flex gap-4 shrink-0">
                     <div
-                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white"
+                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white shrink-0"
                     >
                         Disponível
                     </div>
                     <div
-                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white"
+                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white shrink-0"
                     >
                         Todos
                     </div>
                     <div
-                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white"
+                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white shrink-0"
                     >
                         Pendente
                     </div>
                     <div
-                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white"
+                        class="px-2 cursor-pointer rounded hover:bg-[#393c41] hover:text-[#dbdee1] active:!bg-[#3f4147] active:text-white shrink-0"
                     >
                         Bloqueado
                     </div>
                     <div
-                        class="px-2 cursor-pointer rounded bg-[#248046] text-white active:bg-inherit active:!text-[#2dc770]"
+                        class="px-2 cursor-pointer rounded bg-[#248046] text-white active:bg-inherit active:!text-[#2dc770] shrink-0"
                     >
                         Adicionar amigo
                     </div>
                 </div>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 pl-2 shrink-0">
                 <MessagePlusIcon />
 
                 <v-divider vertical class="!h-6 my-auto"></v-divider>
@@ -51,7 +53,7 @@
                 <div class="item-container">
                     <div class="flex bg-[#1e1f22] p-px rounded">
                         <input class="px-2 h-8 flex-grow outline-none" placeholder="Buscar" />
-                        <div class="w-8 h-8 flex justify-center align-center">
+                        <div class="w-8 h-8 flex justify-center align-center shrink-0">
                             <MagnifyingGlassIcon class="h-5 w-5" />
                         </div>
                     </div>

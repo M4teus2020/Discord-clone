@@ -1,5 +1,5 @@
 <template>
-    <div class="relative">
+    <div class="relative shrink-0">
         <svg aria-hidden="true" class="h-full w-full">
             <foreignObject height="100%" width="100%" mask="url(#mask-avatar-status-cut)">
                 <img :src="avatarUrl" alt=" " aria-hidden="true" class="w-full h-full" />
