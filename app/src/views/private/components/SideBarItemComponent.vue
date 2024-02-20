@@ -24,7 +24,7 @@ import { RouterLink } from 'vue-router'
 import { AvatarComponent } from '@/components'
 
 export default defineComponent({
-    name: 'PrivateChannelItemComponent',
+    name: 'SideBarItemComponent',
     components: {
         AvatarComponent,
         RouterLink

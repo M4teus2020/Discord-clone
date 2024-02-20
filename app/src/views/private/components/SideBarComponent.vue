@@ -5,7 +5,7 @@
         <!-- PRIVATE CHANNELS -->
         <div class="grow p-2 overflow-y-scroll black-scroll">
             <ul>
-                <PrivateChannelItemComponent
+                <SideBarItemComponent
                     v-for="menu in menuChannels"
                     :key="menu.id"
                     :text="menu.text"
@@ -22,7 +22,7 @@
                     </div>
                 </h2>
 
-                <PrivateChannelItemComponent
+                <SideBarItemComponent
                     v-for="dm in dmChannels"
                     :key="dm.id"
                     :text="dm.username"
@@ -38,14 +38,14 @@
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { BottomBarComponent, PrivateChannelItemComponent, TopBarComponent } from './index'
+import { BottomBarComponent, SideBarItemComponent, TopBarComponent } from './index'
 import { PlusIcon } from '@/components/icons'
 
 export default defineComponent({
     name: 'SideBarComponent',
     components: {
         BottomBarComponent,
-        PrivateChannelItemComponent,
+        SideBarItemComponent,
         TopBarComponent,
         PlusIcon
     },

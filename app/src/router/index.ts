@@ -28,19 +28,19 @@ const router = createRouter({
                         },
                         {
                             path: '/@me/:channelId',
-                            component: () => import('../views/friends/FriendsView.vue'),
+                            component: () => import('../views/EmptyView.vue'),
                         },
                         {
                             path: '/nitro',
-                            component: () => import('../views/friends/FriendsView.vue'),
+                            component: () => import('../views/EmptyView.vue'),
                         },
                         {
                             path: '/store',
-                            component: () => import('../views/friends/FriendsView.vue'),
+                            component: () => import('../views/EmptyView.vue'),
                         },
                         {
                             path: '/message-requests',
-                            component: () => import('../views/friends/FriendsView.vue'),
+                            component: () => import('../views/EmptyView.vue'),
                         },
 
                     ], 
@@ -48,10 +48,17 @@ const router = createRouter({
                 {
                     path: '/channel/:channel',
                     component: () => import('../views/private/PrivateView.vue'),
+                    children: [
+                        {
+                            path: '',
+                            name: 'empty',
+                            component: () => import('../views/EmptyView.vue'),
+                        },
+                    ]
                 },
                 {
                     path: '/explore',
-                    component: () => import('../views/private/PrivateView.vue'),
+                    component: () => import('../views/EmptyView.vue'),
                 },
                 // { path: 'users/:id', component: AdminUserDetails },
             ], 
