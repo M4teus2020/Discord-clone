@@ -16,7 +16,18 @@ const app = createApp(App)
 
 const vuetify = createVuetify({
     components,
-    directives
+    directives,
+    display: {
+        mobileBreakpoint: 'md',
+        thresholds: {
+            xs: 0,
+            sm: 640,
+            md: 768,
+            lg: 1024,
+            xl: 1280,
+            xxl: 1536,
+        },
+    },
 })
 
 app.use(createPinia())

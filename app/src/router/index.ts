@@ -11,6 +11,7 @@ const router = createRouter({
         {
             path: '/',
             name: 'app',
+            redirect: { path: '/@me' },
             component: () => import('../views/app/AppView.vue'),
             meta: {
                 requireLogin: true
@@ -28,7 +29,7 @@ const router = createRouter({
                         },
                         {
                             path: '/@me/:channelId',
-                            component: () => import('../views/EmptyView.vue'),
+                            component: () => import('../views/directmessage/DirectMessageView.vue'),
                         },
                         {
                             path: '/nitro',
