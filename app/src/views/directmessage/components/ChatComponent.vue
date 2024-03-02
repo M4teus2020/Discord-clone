@@ -1,26 +1,23 @@
 <template>
-    <div class="h-full w-full">
-        <div></div>
+    <div class="h-full w-full flex flex-col">
+        <div class="flex-grow">
+            
 
-        <v-form>
-            <v-text-field
+        </div>
+
+        <form class="bg-[#383a40] flex align-center gap-4 px-4 mx-4 mb-6 h-11 rounded-lg">
+            <CirclePlusIcon />
+            <input
+                class="flex-grow h-full !border-none outline-none"
                 name="message"
                 placeholder="Digite uma mensagem"
-                variant="outlined"
                 type="text"
-                hide-details="auto"
-                density="compact"
-            >
-                <template #prepend>
-                    <CirclePlusIcon />
-                </template>
-                <template #append>
-                    <GifIcon />
-                    <StickerIcon />
-                    <div class="emoji h-6 w-6"></div>
-                </template>
-            </v-text-field>
-        </v-form>
+                autocomplete="off"
+            />
+            <GifIcon />
+            <StickerIcon />
+            <div class="emoji h-6 w-6"></div>
+        </form>
     </div>
 </template>
 <script lang="ts">
@@ -39,23 +36,21 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .emoji {
-    --custom-emoji-sprite-size: 24px;
-    --custom-emoji-sprite-row: 3;
-    --custom-emoji-sprite-col: 0;
-    --custom-emoji-sprite-bg-position: calc(
-            -1 * var(--custom-emoji-sprite-col) * var(--custom-emoji-sprite-size)
-        )
-        calc(-1 * var(--custom-emoji-sprite-row) * var(--custom-emoji-sprite-size));
+    --emoji-size: 24px;
+    --emoji-row: 3;
+    --emoji-col: 0;
+    --emoji-bg-position: calc(-1 * var(--emoji-col) * var(--emoji-size))
+        calc(-1 * var(--emoji-row) * var(--emoji-size));
 
-    --custom-emoji-sprite-bg-size: calc(20 * var(--custom-emoji-sprite-size))
-        calc(4 * var(--custom-emoji-sprite-size));
+    --emoji-bg-size: calc(20 * var(--emoji-size))
+        calc(4 * var(--emoji-size));
 
     -webkit-mask-image: url(@/assets/emojis.png);
     mask-image: url(@/assets/emojis.png);
-    -webkit-mask-position: var(--custom-emoji-sprite-bg-position);
-    mask-position: var(--custom-emoji-sprite-bg-position);
-    -webkit-mask-size: var(--custom-emoji-sprite-bg-size);
-    mask-size: var(--custom-emoji-sprite-bg-size);
+    -webkit-mask-position: var(--emoji-bg-position);
+    mask-position: var(--emoji-bg-position);
+    -webkit-mask-size: var(--emoji-bg-size);
+    mask-size: var(--emoji-bg-size);
     background-color: #a8a8aa;
 }
 </style>
