@@ -1,57 +1,56 @@
-
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Normal.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 0 499;
-    font-stretch: 0% 200%;
-}  
-@font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Normal_Italic.ttf') format('truetype');
-    font-style: italic;
-    font-weight: 0 499;
-    font-stretch: 0% 200%;
-}  
-@font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Medium.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 500 599;
-    font-stretch: 0% 200%;
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Normal.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 0 499;
+  font-stretch: 0% 200%;
 }
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Medium_Italic.ttf') format('truetype');
-    font-style: italic;
-    font-weight: 500 599;
-    font-stretch: 0% 200%;
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Normal_Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 0 499;
+  font-stretch: 0% 200%;
 }
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Semibold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 500 699;
-    font-stretch: 0% 200%;
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500 599;
+  font-stretch: 0% 200%;
 }
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Bold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 700 799;
-    font-stretch: 0% 200%;
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Medium_Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 500 599;
+  font-stretch: 0% 200%;
 }
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Bold_Italic.ttf') format('truetype');
-    font-style: italic;
-    font-weight: 700 799;
-    font-stretch: 0% 200%;
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Semibold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500 699;
+  font-stretch: 0% 200%;
 }
 @font-face {
-    font-family: 'gg sans';
-    src: url('./gg sans/gg_sans_Extrabold.ttf') format('truetype');
-    font-style: normal;
-    font-weight: 800 1000;
-    font-stretch: 0% 200%;
-}  
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700 799;
+  font-stretch: 0% 200%;
+}
+@font-face {
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Bold_Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700 799;
+  font-stretch: 0% 200%;
+}
+@font-face {
+  font-family: 'gg sans';
+  src: url('./gg sans/gg_sans_Extrabold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 800 1000;
+  font-stretch: 0% 200%;
+}

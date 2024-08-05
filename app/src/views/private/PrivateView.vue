@@ -1,9 +1,9 @@
 <template>
-    <div class="flex flex-grow">
-        <SideBarComponent />
+  <div class="flex flex-grow">
+    <SideBarComponent />
 
-        <RouterView class="w-full h-full" />
-    </div>
+    <RouterView class="w-full h-full" />
+  </div>
 </template>
 
 <script lang="ts">
@@ -12,11 +12,11 @@ import { RouterView } from 'vue-router'
 import { SideBarComponent } from './components'
 
 export default defineComponent({
-    name: 'AppView',
-    components: {
-        SideBarComponent,
-        RouterView
-    }
+  name: 'AppView',
+  components: {
+    SideBarComponent,
+    RouterView
+  }
 })
 </script>
 

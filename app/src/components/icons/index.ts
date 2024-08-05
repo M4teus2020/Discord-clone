@@ -1,4 +1,5 @@
 export { default as BoxIcon } from './BoxIcon.vue'
+export { default as CheckedIcon } from './CheckedIcon.vue'
 export { default as CirclePlusIcon } from './CirclePlusIcon.vue'
 export { default as CogIcon } from './CogIcon.vue'
 export { default as CompassIcon } from './CompassIcon.vue'

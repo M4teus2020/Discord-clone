@@ -1,3 +1,5 @@
 export { default as AvatarComponent } from './AvatarComponent.vue'
 export { default as BtnActionComponent } from './BtnActionComponent.vue'
+export { default as CheckboxComponent } from './CheckboxComponent.vue'
+export { default as InputComponent } from './InputComponent.vue'
 export { default as NavItemComponent } from './NavItemComponent.vue'

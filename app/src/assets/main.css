@@ -5,23 +5,23 @@
 @tailwind utilities;
 
 .elevation-low {
-    box-shadow:
-        0 1px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.2),
-        0 1.5px 0 hsl(0 calc(1 * 0%) 0.8% / 0.05),
-        0 2px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.05);
+  box-shadow:
+    0 1px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.2),
+    0 1.5px 0 hsl(0 calc(1 * 0%) 0.8% / 0.05),
+    0 2px 0 hsl(240 calc(1 * 7.7%) 2.5% / 0.05);
 }
 
 img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
 }
 
 .black-scroll {
-    scrollbar-color: #1a1b1e #2b2d31;
+  scrollbar-color: #1a1b1e #2b2d31;
 }
 
 .scroll-none {
-    scrollbar-width: none;
+  scrollbar-width: none;
 }

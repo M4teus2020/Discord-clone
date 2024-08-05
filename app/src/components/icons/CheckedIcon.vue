@@ -3,14 +3,14 @@
     aria-hidden="true"
     role="img"
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width="18"
+    height="18"
     fill="none"
     viewBox="0 0 24 24"
   >
     <path
-      fill="currentColor"
-      d="M12 22a10 10 0 1 0-8.45-4.64c.13.19.11.44-.04.61l-2.06 2.37A1 1 0 0 0 2.2 22H12Z"
+      fill="white"
+      d="M21.7 5.3a1 1 0 0 1 0 1.4l-12 12a1 1 0 0 1-1.4 0l-6-6a1 1 0 1 1 1.4-1.4L9 16.58l11.3-11.3a1 1 0 0 1 1.4 0Z"
     ></path>
   </svg>
 </template>

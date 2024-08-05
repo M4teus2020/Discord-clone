@@ -10,7 +10,8 @@ module.exports = {
         '@vue/eslint-config-prettier/skip-formatting',
         'plugin:@typescript-eslint/recommended',
         'plugin:vue/vue3-strongly-recommended',
-        'prettier'
+        'prettier-eslint',
+        'prettier',
     ],
     overrides: [
         {
@@ -32,7 +33,7 @@ module.exports = {
     rules: {
         semi: ['error', 'never'],
         quotes: ['error', 'single'],
-        indent: ['error', 4],
+        indent: ['error', 2],
         'comma-spacing': ['error', { before: false, after: true }],
         // 'linebreak-style': ['error', 'windows']
     }
