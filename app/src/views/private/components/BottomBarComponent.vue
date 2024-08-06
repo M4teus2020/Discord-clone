@@ -1,3 +1,11 @@
+<script setup lang="ts">
+import { AvatarComponent, BtnActionComponent } from '@/components'
+import { useAuth } from '@/stores/auth';
+
+const auth = useAuth()
+
+</script>
+
 <template>
   <div class="h-[3.25rem] bg-[#232428] px-[6px] flex gap-2 align-center justify-between">
     <!-- USER -->
@@ -28,24 +36,11 @@
     <div class="flex">
       <BtnActionComponent icon="Mic" />
       <BtnActionComponent icon="HeadPhone" />
-      <BtnActionComponent icon="Cog" />
+      <BtnActionComponent icon="Cog" @click="auth.logout()" />
     </div>
     <!-- ACTIONS -->
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { AvatarComponent, BtnActionComponent } from '@/components'
-
-export default defineComponent({
-  name: 'BottomBarComponent',
-  components: {
-    BtnActionComponent,
-    AvatarComponent
-  }
-})
-</script>
 
 <style lang="scss" scoped>
 .hover-showtag:hover {
