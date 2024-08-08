@@ -10,5 +10,5 @@ export default {
   },
   async user() {
     return await api.get<User>('/user')
-  },
+  }
 }

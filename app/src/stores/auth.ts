@@ -1,7 +1,7 @@
 import type { AuthResponse, User } from '@/interfaces/auth'
 import router from '@/router'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useLocalStorage } from '@vueuse/core'
 import auth from '@/services/auth'
 
@@ -40,7 +40,13 @@ export const useAuth = defineStore('auth', () => {
 
   return {
     token,
-    user,
+    user: computed(() => {
+      if (!user.value) {
+        throw new Error('User not auth')
+      }
+
+      return user.value
+    }),
     login,
     logout,
     isAuth

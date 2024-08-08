@@ -11,7 +11,7 @@ type Errors<T> = {
   [K in keyof T]?: string
 }
 
-export function useCRUD<T extends object = {}, R = T>(endpoint: string) {
+export function useCRUD<T extends object = object, R = T>(endpoint: string) {
   const form = reactive<T>({} as T)
   const errors = reactive<Errors<T>>({})
   const isLoading = ref(false)
@@ -19,7 +19,7 @@ export function useCRUD<T extends object = {}, R = T>(endpoint: string) {
 
   function resetErrors() {
     for (const key in errors) {
-      // @ts-ignore
+      // @ts-expect-error - just works
       delete errors[key]
     }
 
@@ -35,7 +35,7 @@ export function useCRUD<T extends object = {}, R = T>(endpoint: string) {
 
   function resetForm() {
     for (const key in errors) {
-      // @ts-ignore
+      // @ts-expect-error - just works
       delete errors[key]
     }
   }
@@ -50,6 +50,7 @@ export function useCRUD<T extends object = {}, R = T>(endpoint: string) {
     resetForm()
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleError(error: any): void {
     if (error.isAxiosError) {
       const axiosError = error as AxiosError
@@ -74,6 +75,7 @@ export function useCRUD<T extends object = {}, R = T>(endpoint: string) {
     try {
       const response = await api.post<R>(endpoint, form)
       return response.data
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       handleError(error)
       throw error

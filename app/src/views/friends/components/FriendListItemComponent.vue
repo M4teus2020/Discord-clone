@@ -1,11 +1,16 @@
+<script setup lang="ts">
+import { DotsIcon, MessageIcon } from '@/components/icons'
+import { AvatarComponent } from '@/components'
+</script>
+
 <template>
   <div
-    class="friend-item h-[62px] ml-[30px] mr-5 hover:!ml-5 hover:!mr-2.5 hover:px-2.5 hover:rounded-lg border-t-[0.8px] border-[#3f4147] hover:bg-[#393c41] flex align-center justify-between"
+    class="friend-item align-center ml-[30px] mr-5 flex h-[62px] justify-between border-t-[0.8px] border-[#3f4147] hover:!ml-5 hover:!mr-2.5 hover:rounded-lg hover:bg-[#393c41] hover:px-2.5"
   >
-    <div class="h-10 flex align-center overflow-hidden text-nowrap">
+    <div class="align-center flex h-10 overflow-hidden text-nowrap">
       <AvatarComponent
         avatar-url="https://cdn.discordapp.com/avatars/1092414061574107146/3c6b4cc495f98246ce165747d154bc08.webp?size=40"
-        class="w-8 h-8 mr-3"
+        class="mr-3 h-8 w-8"
       />
 
       <div class="text-sm leading-4">
@@ -15,34 +20,20 @@
         <span>Offline</span>
       </div>
     </div>
-    <div class="flex gap-2 shrink-0">
+    <div class="flex shrink-0 gap-2">
       <div
-        class="button rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center cursor-pointer"
+        class="button align-center flex h-9 w-9 cursor-pointer justify-center rounded-full bg-[#2b2d31] text-[#b5bac1]"
       >
-        <MessageIcon class="w-5 h-5" />
+        <MessageIcon class="h-5 w-5" />
       </div>
       <div
-        class="button rounded-full bg-[#2b2d31] text-[#b5bac1] w-9 h-9 flex justify-center align-center cursor-pointer"
+        class="button align-center flex h-9 w-9 cursor-pointer justify-center rounded-full bg-[#2b2d31] text-[#b5bac1]"
       >
-        <DotsIcon class="w-5 h-5" />
+        <DotsIcon class="h-5 w-5" />
       </div>
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { DotsIcon, MessageIcon } from '@/components/icons'
-import { AvatarComponent } from '@/components'
-
-export default {
-  name: 'FriendListItemComponent',
-  components: {
-    AvatarComponent,
-    DotsIcon,
-    MessageIcon
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .friend-item {

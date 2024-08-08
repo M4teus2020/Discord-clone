@@ -22,6 +22,7 @@ async function submit(): Promise<void> {
     const response = await crud.create()
 
     auth.login(response)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     if (error.response && error.response.status === 422) return
 
@@ -31,14 +32,14 @@ async function submit(): Promise<void> {
 </script>
 
 <template>
-  <VForm class="bg-discord-dark p-4 sm:p-8 w-full sm:w-min rounded-lg lg:flex gap-[64px]" @submit.prevent="submit">
-    <div class="flex flex-col justify-center align-center z-20 sm:w-[414px]">
+  <VForm class="w-full gap-[64px] rounded-lg bg-discord-dark p-4 sm:w-min sm:p-8 lg:flex" @submit.prevent="submit">
+    <div class="align-center z-20 flex flex-col justify-center sm:w-[414px]">
       <img :src="DiscordLogo" alt="Discord logo" class="mb-4 sm:hidden" />
       <div class="text-center">
-        <h1 class="mb-1 text-2xl text-discord-lightest font-medium tracking-wide">Criar uma conta</h1>
+        <h1 class="mb-1 text-2xl font-medium tracking-wide text-discord-lightest">Criar uma conta</h1>
       </div>
 
-      <div class="w-full mt-5 space-y-4">
+      <div class="mt-5 w-full space-y-4">
         <InputComponent
           label="E-mail"
           type="email"
@@ -90,7 +91,7 @@ async function submit(): Promise<void> {
         />
 
         <VBtn class="w-full py-0.5" color="#5865f2" height="44px" type="submit" :loading="crud.isLoading">
-          <span class="capitalize text-base tracking-normal"> Continuar </span>
+          <span class="text-base capitalize tracking-normal"> Continuar </span>
         </VBtn>
 
         <p class="text-xs">

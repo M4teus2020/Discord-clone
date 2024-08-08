@@ -15,7 +15,6 @@ export interface Credentials {
   password: string
 }
 
-
 export interface AuthResponse {
   token: string
   user: User

@@ -1,33 +1,21 @@
+<script setup lang="ts">
+defineProps<{
+  avatarUrl: string
+  status?: string
+}>()
+</script>
+
 <template>
   <div class="relative shrink-0">
     <svg aria-hidden="true" class="h-full w-full">
       <foreignObject height="100%" width="100%" mask="url(#mask-avatar-status-cut)">
-        <img :src="avatarUrl" alt=" " aria-hidden="true" class="w-full h-full" />
+        <img :src="avatarUrl" alt=" " aria-hidden="true" class="h-full w-full" />
       </foreignObject>
     </svg>
-    <div :class="`status-icon w-[10px] h-[10px] rounded-full absolute bottom-0 right-0 ${status}`"></div>
+    <div :class="`status-icon absolute bottom-0 right-0 h-[10px] w-[10px] rounded-full ${status}`"></div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'AvatarComponent',
-  props: {
-    avatarUrl: {
-      type: String,
-      required: true,
-      default: null
-    },
-    status: {
-      type: String,
-      required: false,
-      default: 'offline'
-    }
-  }
-})
-</script>
 <style lang="scss" scoped>
 .status-icon {
   &.online {

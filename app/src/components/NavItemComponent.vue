@@ -1,21 +1,54 @@
+<script setup lang="ts">
+import { defineAsyncComponent, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import router from '@/router'
+
+const props = defineProps<{
+  path?: string | boolean
+  icon?: string | boolean
+  iconClass?: string
+  iconClassActive?: string
+  pill?: boolean
+  notificationCount?: number
+  notification?: boolean
+}>()
+
+const route = useRoute()
+
+const iconComponent = computed(() => {
+  if (typeof props.icon === 'string') {
+    return defineAsyncComponent(() => import(`./icons/${props.icon}Icon.vue`))
+  }
+  return null
+})
+
+const isActive = computed(() => {
+  return route.matched.some(({ path }) => path === props.path) || route.fullPath === props.path
+})
+
+const activeClass = computed(() => {
+  return props.iconClassActive && isActive.value ? props.iconClassActive : ''
+})
+</script>
+
 <template>
   <li
     :class="`nav-item relative ${isActive ? 'active' : ''}`"
-    @click="typeof path == 'string' ? $router.push(path) : ''"
+    @click="typeof path == 'string' ? router.push(path) : ''"
   >
-    <div v-if="pill" class="pill absolute flex align-center h-full left-[-0.75rem]">
-      <span :class="`transition-all block rounded-r-full bg-white ${notification ? 'w-1 h-2' : 'w-0 h-0'}`"></span>
+    <div v-if="pill" class="pill align-center absolute left-[-0.75rem] flex h-full">
+      <span :class="`block rounded-r-full bg-white transition-all ${notification ? 'h-2 w-1' : 'h-0 w-0'}`"></span>
     </div>
 
     <div
-      :class="`icon-item w-12 h-12 rounded-full transition-all flex justify-center align-center overflow-hidden ${iconClass} ${activeClass}`"
+      :class="`icon-item align-center flex h-12 w-12 justify-center overflow-hidden rounded-full transition-all ${iconClass} ${activeClass}`"
     >
       <component v-if="icon" :is="iconComponent" />
       <slot v-else></slot>
 
       <span
-        v-if="notificationCount > 0"
-        class="count-tag text-white bg-[#f23f42] text-xs text-center px-1.5 min-w-4 rounded-lg absolute bottom-0 right-0"
+        v-if="notificationCount"
+        class="count-tag absolute bottom-0 right-0 min-w-4 rounded-lg bg-[#f23f42] px-1.5 text-center text-xs text-white"
       >
         {{ notificationCount }}
       </span>
@@ -23,61 +56,6 @@
   </li>
 </template>
 
-<script lang="ts">
-import { defineAsyncComponent, defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'NavItemComponent',
-  props: {
-    path: {
-      type: [String, Boolean],
-      required: false,
-      default: false
-    },
-    icon: {
-      type: [String, Boolean],
-      required: false,
-      default: false
-    },
-    iconClass: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    iconClassActive: {
-      type: String,
-      required: false,
-      default: ''
-    },
-    pill: {
-      type: Boolean,
-      required: false,
-      default: true
-    },
-    notificationCount: {
-      type: Number,
-      required: false,
-      default: 0
-    },
-    notification: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
-  computed: {
-    iconComponent() {
-      return defineAsyncComponent(() => import(`./icons/${this.icon}Icon.vue`))
-    },
-    isActive() {
-      return this.$route.matched.some(({ path }) => path === this.path) || this.$route.fullPath === this.path
-    },
-    activeClass() {
-      return this.iconClassActive && this.isActive ? this.iconClassActive : ''
-    }
-  }
-})
-</script>
 <style lang="scss" scoped>
 .count-tag {
   box-shadow: 0 0 0px 4px #1e1f22;

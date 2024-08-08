@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { AvatarComponent, BtnActionComponent } from '@/components'
-import { useAuth } from '@/stores/auth';
+import { useAuth } from '@/stores/auth'
 
 const auth = useAuth()
-
 </script>
 
 <template>
-  <div class="h-[3.25rem] bg-[#232428] px-[6px] flex gap-2 align-center justify-between">
+  <div class="align-center flex h-[3.25rem] justify-between gap-2 bg-[#232428] px-[6px]">
     <!-- USER -->
-    <div class="hover-showtag pl-[2px] py-1 rounded-md hover:bg-[#3d3e45] flex flex-grow gap-2">
+    <div class="hover-showtag flex flex-grow gap-2 rounded-md py-1 pl-[2px] hover:bg-[#3d3e45]">
       <!-- AVATAR -->
       <AvatarComponent
-        class="w-8 h-8"
+        class="h-8 w-8"
         avatar-url="https://cdn.discordapp.com/avatars/208561912806506497/6cd59941edaa9eebb244407341d76731.webp?size=256"
         status="idle"
       />
@@ -20,11 +19,11 @@ const auth = useAuth()
 
       <!-- NAME/TAG -->
       <div class="mt-[-2px]">
-        <div class="text-white text-sm">Felini</div>
-        <div class="text-[11px] h-4 overflow-hidden">
-          <div class="relative top-0 transition-all status-tag">
+        <div class="text-sm text-white">{{ auth.user.name }}</div>
+        <div class="h-4 overflow-hidden text-[11px]">
+          <div class="status-tag relative top-0 transition-all">
             <div class="status">Disponível</div>
-            <div class="tag">matfelini</div>
+            <div class="tag">{{ auth.user.user }}</div>
           </div>
         </div>
       </div>
@@ -45,7 +44,7 @@ const auth = useAuth()
 <style lang="scss" scoped>
 .hover-showtag:hover {
   .status-tag {
-    top: -16px;
+    top: -16px !important;
   }
 }
 </style>

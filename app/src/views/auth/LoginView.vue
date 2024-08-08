@@ -19,6 +19,7 @@ async function submit(): Promise<void> {
     const response = await crud.create()
 
     auth.login(response)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     if (error.response && error.response.status === 422) return
 
@@ -28,16 +29,16 @@ async function submit(): Promise<void> {
 </script>
 
 <template>
-  <VForm class="bg-discord-dark p-4 sm:p-8 w-full sm:w-min rounded-lg lg:flex gap-[64px]" @submit.prevent="submit">
+  <VForm class="w-full gap-[64px] rounded-lg bg-discord-dark p-4 sm:w-min sm:p-8 lg:flex" @submit.prevent="submit">
     <!-- FORM DIV -->
-    <div class="flex flex-col justify-center align-center z-20 sm:w-[414px]">
+    <div class="align-center z-20 flex flex-col justify-center sm:w-[414px]">
       <img :src="DiscordLogo" alt="Discord logo" class="mb-4 sm:hidden" />
       <div class="text-center">
-        <h1 class="mb-1 text-2xl text-white font-medium tracking-wide">Boas-vindas de volta!</h1>
+        <h1 class="mb-1 text-2xl font-medium tracking-wide text-white">Boas-vindas de volta!</h1>
         <p class="font-2xl">Estamos muito animados em te ver novamente!</p>
       </div>
 
-      <div class="w-full mt-5 space-y-4">
+      <div class="mt-5 w-full space-y-4">
         <InputComponent
           label="E-mail"
           type="email"
@@ -61,7 +62,7 @@ async function submit(): Promise<void> {
         </p>
 
         <VBtn class="w-full py-0.5" color="#5865f2" height="44px" type="submit" :loading="crud.isLoading">
-          <span class="capitalize text-base tracking-normal"> Entrar </span>
+          <span class="text-base capitalize tracking-normal"> Entrar </span>
         </VBtn>
 
         <p>
@@ -73,12 +74,12 @@ async function submit(): Promise<void> {
     <!-- FORM DIV -->
 
     <!-- QRCODE -->
-    <div class="hidden lg:block w-[240px] h-[344px]">
-      <div class="h-full flex flex-col justify-center align-center">
-        <div class="p-2 mb-8 rounded-lg bg-discord-lightest">
+    <div class="hidden h-[344px] w-[240px] lg:block">
+      <div class="align-center flex h-full flex-col justify-center">
+        <div class="mb-8 rounded-lg bg-discord-lightest p-2">
           <QRCode />
         </div>
-        <h2 class="text-2xl text-discord-lightest mb-2">Entrar com código QR</h2>
+        <h2 class="mb-2 text-2xl text-discord-lightest">Entrar com código QR</h2>
         <div class="text-center leading-5">
           Escaneie isto com o
           <strong>app móvel do Discord</strong> para fazer login imediatamente.

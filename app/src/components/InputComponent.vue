@@ -24,14 +24,14 @@ const inputClass = computed(() => cn('bg-[#1e1f22] h-10 p-2.5 rounded-md focus:o
 
 const inputId = computed(() => props.name || 'input')
 
-const model = defineModel()
+const model = defineModel<string | number | null | undefined>()
 </script>
 
 <template>
   <div :class="containerClass">
     <label v-if="label" :for="inputId" :class="labelClass">
-      {{ label }} 
-      <span v-if="error" class="text-xs capitalize mt-1">
+      {{ label }}
+      <span v-if="error" class="mt-1 text-xs capitalize">
         - {{ Array.isArray(error) ? error.join(', ') : error }}
       </span>
       <span v-else-if="required" class="text-red">*</span>

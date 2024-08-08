@@ -1,25 +1,17 @@
+<script setup lang="ts">
+import { ChatComponent } from './components'
+</script>
+
 <template>
   <div class="w-full">
     <!-- TOPBAR -->
-    <div class="elevation-low h-12 py-2 px-4 flex align-center"></div>
+    <div class="elevation-low align-center flex h-12 px-4 py-2"></div>
     <!-- TOPBAR -->
-    <div class="content w-full flex">
+    <div class="content flex w-full">
       <ChatComponent />
     </div>
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { ChatComponent } from './components'
-
-export default defineComponent({
-  name: 'DirectMessageView',
-  components: {
-    ChatComponent
-  }
-})
-</script>
 
 <style lang="scss" scoped>
 .content {

@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import { NavItemComponent } from '@/components'
+</script>
+
 <template>
-  <ul class="w-[4.5rem] bg-[#1e1f22] h-full flex flex-col align-center p-3 gap-2 overflow-auto scroll-none">
+  <ul class="align-center scroll-none flex h-full w-[4.5rem] flex-col gap-2 overflow-auto bg-[#1e1f22] p-3">
     <!-- DM -->
     <NavItemComponent
       path="/@me"
@@ -47,15 +51,3 @@
     />
   </ul>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { NavItemComponent } from '@/components'
-
-export default defineComponent({
-  name: 'NavbarComponent',
-  components: {
-    NavItemComponent
-  }
-})
-</script>
