@@ -2,17 +2,17 @@ import type { AuthResponse, User } from '@/interfaces/auth'
 import router from '@/router'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { useLocalStorage } from '@vueuse/core'
+import auth from '@/services/auth'
 
 export const useAuth = defineStore('auth', () => {
-  const token = ref<string | null>(localStorage.getItem('token'))
-
+  const token = useLocalStorage<string | null>('token', null)
   const user = ref<User | null>(null)
 
   function login(authData: AuthResponse) {
     token.value = authData.token
     user.value = authData.user
 
-    localStorage.setItem('token', authData.token)
     router.push({ name: 'app' })
   }
 
@@ -20,14 +20,29 @@ export const useAuth = defineStore('auth', () => {
     token.value = null
     user.value = null
 
-    localStorage.removeItem('token')
-    router.push({ name: 'login' })
+    router.push({ name: 'auth' })
+  }
+
+  async function isAuth() {
+    if (!token.value) return false
+
+    try {
+      const { data: userData } = await auth.user()
+      user.value = userData
+
+      return true
+    } catch (error) {
+      logout()
+
+      return false
+    }
   }
 
   return {
     token,
     user,
     login,
-    logout
+    logout,
+    isAuth
   }
 })

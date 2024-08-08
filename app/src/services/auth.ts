@@ -2,10 +2,13 @@ import type { AuthResponse, Credentials, User } from '@/interfaces/auth'
 import api from './api'
 
 export default {
-  register(user: User) {
-    return api.post<AuthResponse>('/register', user)
+  async register(user: User) {
+    return await api.post<AuthResponse>('/register', user)
   },
-  login(credentials: Credentials) {
-    return api.post<AuthResponse>('/login', credentials)
-  }
+  async login(credentials: Credentials) {
+    return await api.post<AuthResponse>('/login', credentials)
+  },
+  async user() {
+    return await api.get<User>('/user')
+  },
 }

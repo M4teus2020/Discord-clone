@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import { useAuth } from '@/stores/auth'
 import { InputComponent, CheckboxComponent } from '@/components'
-import { useRouter } from 'vue-router'
 import { VBtn, VForm } from 'vuetify/components'
 import DiscordLogo from '@/assets/logo.svg'
 import type { AuthResponse, RegistrationUser } from '@/interfaces/auth'
 import { useCRUD } from '@/composables/useCRUD'
 
 const auth = useAuth()
-const router = useRouter()
 
 const crud = useCRUD<RegistrationUser, AuthResponse>('/register')
 crud.setForm({

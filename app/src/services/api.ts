@@ -1,6 +1,6 @@
 import axios from 'axios'
+import { useAuth } from '@/stores/auth'
 
-console.log(import.meta.env.VITE_API_BASE_URL)
 const apiClient = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   headers: {
@@ -9,6 +9,13 @@ const apiClient = axios.create({
 })
 
 apiClient.interceptors.request.use((config) => {
+  const auth = useAuth()
+  const token = auth.token
+
+  if (token) {
+    config.headers['Authorization'] = `Bearer ${token}`
+  }
+
   return config
 })
 
